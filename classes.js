@@ -131,26 +131,32 @@ this.reports.splice(i,1);
 this.bonus += 100;
   }
   changeOfTitle(){
-    if((this.reports.length - 1) >= 101){
+    if((this.reports.length) >= 101){
       this.title = "Bestest Manager";
-      console.log(report.length-1)
-    }else if((this.reports.length -1) >= 51){
+      console.log(report.length)
+    }else if((this.reports.length) >= 51){
       this.title = "Manager Plus";
-    } else if((this.reports.length -1) >= 11){
+    } else if((this.reports.length) >= 11){
       this.title = "Manager";
-    }else if((this.reports.length -1) >= 4){
+    }else if((this.reports.length) >= 4){
       this.title = "Mostly Manager";
-    }else if((this.reports.length -1) >= 1){
+    }else if((this.reports.length) >= 1){
       this.title = "Barely Manager";
     }
     else{
       this.title = "Not a manager";
+      console.log(this.reports.length)
     }
+    
   }
 }
 
-
-
+var m1 = new ProgressiveManager('chance', 'farr', 'c.f', 21);
+m1.hire('Jack');
+m1.hire('jill');
+m1.hire('jillian');
+m1.changeOfTitle();
+console.log(m1.title);
 
 
 ////////// PROBLEM 4 - Black Diamond //////////
