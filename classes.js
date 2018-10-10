@@ -193,7 +193,25 @@ class Machine{
     this.wear_and_tear_count = 0;
     this.needs_reboot = false;
   }
-  makeWidgets()
+
+  makeWidgets(num){
+    var count = 0;
+    this.widgets_made_count += num;
+    if(count % 50 === 0){
+      this.wear_and_tear_count += 1;
+    }
+      count++
+  }
+
+  fixmachine(){
+    this.needs_reboot = true;
+  }
+
+  reboot(){
+    return function(){
+      this.wear_and_tear_count -= 10;
+    }
+  }
   
 }
 
