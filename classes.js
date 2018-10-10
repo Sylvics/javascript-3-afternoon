@@ -125,15 +125,19 @@ class ProgressiveManager{
   }
   hire(employee){
     this.reports.push(employee);
+    this.changeOfTitle();
   }
   fire(i){
 this.reports.splice(i,1);
 this.bonus += 100;
+this.changeOfTitle();
+
   }
   changeOfTitle(){
+    console.log("isrunnin");
     if((this.reports.length) >= 101){
       this.title = "Bestest Manager";
-      console.log(report.length)
+      console.log(this.reports.length)
     }else if((this.reports.length) >= 51){
       this.title = "Manager Plus";
     } else if((this.reports.length) >= 11){
@@ -183,5 +187,14 @@ console.log(m1.title);
 */
 
 //Code Here
+class Machine{
+  constructor(){
+    this.widgets_made_count = 0;
+    this.wear_and_tear_count = 0;
+    this.needs_reboot = false;
+  }
+  makeWidgets()
+  
+}
 
 
