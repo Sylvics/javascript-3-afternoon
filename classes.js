@@ -178,7 +178,7 @@ console.log(m1.title);
   A Machine has the following methods:
     - makeWidgets
         - This function takes in a number and increases widgets_made_count by that amount
-        - It also increases wear_and_tear_count by 1 for every 50
+        - It also increases wear_and_tear_count by 1 for every 50 widgets made
     - fixMachine
         - This function sets needs_reboot to true
     - reboot
@@ -195,24 +195,28 @@ class Machine{
   }
 
   makeWidgets(num){
-    var count = 0;
     this.widgets_made_count += num;
-    if(count % 50 === 0){
+    while(num >= 50){
+      //console.log('We made it to the if statement!')
+      num -= 50;
       this.wear_and_tear_count += 1;
+
+
     }
-      count++
+    
   }
 
-  fixmachine(){
+  fixMachine(){
     this.needs_reboot = true;
+    this.reboot();
   }
 
   reboot(){
-    return function(){
-      this.wear_and_tear_count -= 10;
-    }
-  }
+    this.wear_and_tear_count -= 10;
+    this.needs_reboot = false;
+    return this.wear_and_tear_count;
+  }  
+   
+  
   
 }
-
-
